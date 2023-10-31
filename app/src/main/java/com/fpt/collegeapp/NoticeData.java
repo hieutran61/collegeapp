@@ -57,4 +57,15 @@ public class NoticeData {
     public void setKey(String key) {
         this.key = key;
     }
+
+    @Override
+    public String toString() {
+        return "NoticeData{" +
+                "title='" + title + '\'' +
+                ", image='" + image + '\'' +
+                ", data='" + data + '\'' +
+                ", time='" + time + '\'' +
+                ", key='" + key + '\'' +
+                '}';
+    }
 }

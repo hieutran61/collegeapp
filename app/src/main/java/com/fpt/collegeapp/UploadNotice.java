@@ -51,7 +51,7 @@ public class UploadNotice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_notice);
 
-        reference = FirebaseDatabase.getInstance().getReference();
+        reference = FirebaseDatabase.getInstance("https://my-college-app-060102-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
         storageReference = FirebaseStorage.getInstance().getReference();
 
         pd = new ProgressDialog(this);
@@ -104,6 +104,7 @@ public class UploadNotice extends AppCompatActivity {
                                @Override
                                public void onSuccess(Uri uri) {
                                     downloadUrl = String.valueOf(uri);
+                                    System.out.println("DONE uploadImage()");
                                     uploadData();
                                }
                            });
