@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.fpt.collegeapp.notice.UploadNotice;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent = new Intent(MainActivity.this, UploadImage.class);
             startActivity(intent);
         } else if (view.getId() == R.id.addEbook) {
-            intent = new Intent(MainActivity.this, UploaadPdfActivity.class);
+            intent = new Intent(MainActivity.this, UploadPdfActivity.class);
             startActivity(intent);
         }
 
