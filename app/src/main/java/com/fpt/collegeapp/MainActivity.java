@@ -8,12 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.fpt.collegeapp.notice.UploadNotice;
+import com.fpt.collegeapp.notice.DeleteNoticeActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    CardView uploadNotice, addGalleryImage, addEBook;
+    CardView uploadNotice, addGalleryImage, addEBook, faculty, deleteNotice;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         uploadNotice.setOnClickListener(this);
         addGalleryImage.setOnClickListener(this);
         addEBook.setOnClickListener(this);
+        deleteNotice.setOnClickListener(this);
 
 
     }
@@ -43,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (view.getId() == R.id.addEbook) {
             intent = new Intent(MainActivity.this, UploadPdfActivity.class);
+            startActivity(intent);
+        } else if(view.getId() == R.id.deleteNotice) {
+            intent = new Intent(MainActivity.this, DeleteNoticeActivity.class);
             startActivity(intent);
         }
     }
