@@ -1,4 +1,4 @@
-package com.fpt.collegeapp;
+package com.fpt.collegeapp.notice;
 
 public class NoticeData {
     String title;

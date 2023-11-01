@@ -28,13 +28,13 @@
             android:name=".faculty.UpdateFaculty"
             android:exported="false" />
         <activity
-            android:name=".UploaadPdfActivity"
+            android:name=".UploadPdfActivity"
             android:exported="false" />
         <activity
             android:name=".UploadImage"
             android:exported="false" />
         <activity
-            android:name=".UploadNotice"
+            android:name=".notice.UploadNotice"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
