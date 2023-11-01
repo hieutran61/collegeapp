@@ -7,24 +7,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.fpt.collegeapp.notice.DeleteNoticeActivity;
-import com.fpt.collegeapp.notice.UploadNotice;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    CardView uploadNotice, addGalleryImage, addEbook, faculty, deleteNotice;
-
+    CardView uploadNotice, addGalleryImage, addEBook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        uploadNotice = findViewById((R.id.addNotice));
+        addGalleryImage = findViewById((R.id.uploadImage));
+        addEBook = findViewById(R.id.addEbook);
 
 
         uploadNotice.setOnClickListener(this);
-        deleteNotice.setOnClickListener(this);
-        addGalleryImage = findViewById((R.id.uploadImage));
+        addGalleryImage.setOnClickListener(this);
+        addEBook.setOnClickListener(this);
 
 
     }
@@ -38,9 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (view.getId() == R.id.uploadImage) {
             intent = new Intent(MainActivity.this, UploadImage.class);
             startActivity(intent);
-        }
-        if(view.getId() == R.id.deleteNotice) {
-            intent = new Intent(MainActivity.this, DeleteNoticeActivity.class);
+        } else if (view.getId() == R.id.addEbook) {
+            intent = new Intent(MainActivity.this, UploaadPdfActivity.class);
             startActivity(intent);
         }
     }
