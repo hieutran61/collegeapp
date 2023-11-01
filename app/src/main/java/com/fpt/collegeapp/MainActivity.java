@@ -12,7 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    CardView uploadNotice, addGalleryImage;
+    CardView uploadNotice, addGalleryImage, addEBook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +21,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         uploadNotice = findViewById((R.id.addNotice));
         addGalleryImage = findViewById((R.id.uploadImage));
+        addEBook = findViewById(R.id.addEbook);
 
 
         uploadNotice.setOnClickListener(this);
         addGalleryImage.setOnClickListener(this);
+        addEBook.setOnClickListener(this);
+
 
     }
 
@@ -36,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (view.getId() == R.id.uploadImage) {
             intent = new Intent(MainActivity.this, UploadImage.class);
+            startActivity(intent);
+        } else if (view.getId() == R.id.addEbook) {
+            intent = new Intent(MainActivity.this, UploaadPdfActivity.class);
             startActivity(intent);
         }
 
