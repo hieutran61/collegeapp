@@ -23,7 +23,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
 
-public class UploaadPdfActivity extends AppCompatActivity {
+public class UploadPdfActivity extends AppCompatActivity {
 
     private CardView addPdf;
     private EditText pdfTittle;
