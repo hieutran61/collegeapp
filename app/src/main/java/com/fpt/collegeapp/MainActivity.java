@@ -43,6 +43,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent = new Intent(MainActivity.this, DeleteNoticeActivity.class);
             startActivity(intent);
         }
-
     }
 }
