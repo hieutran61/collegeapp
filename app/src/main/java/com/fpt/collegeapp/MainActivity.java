@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    CardView uploadNotice, addGalleryImage, addEBook;
+    CardView uploadNotice, addGalleryImage, addEBook, faculty, deleteNotice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
