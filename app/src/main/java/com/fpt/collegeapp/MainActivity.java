@@ -45,6 +45,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent = new Intent(MainActivity.this, UploadPdfActivity.class);
             startActivity(intent);
         }
-
     }
 }
