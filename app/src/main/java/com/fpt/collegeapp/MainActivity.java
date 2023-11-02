@@ -26,14 +26,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addGalleryImage = findViewById((R.id.uploadImage));
         addEBook = findViewById(R.id.addEbook);
         faculty = findViewById(R.id.faculty);
+        deleteNotice = findViewById(R.id.deleteNotice);
 
 
 
         uploadNotice.setOnClickListener(this);
         addGalleryImage.setOnClickListener(this);
         addEBook.setOnClickListener(this);
-//        deleteNotice.setOnClickListener(this);
         faculty.setOnClickListener(this);
+        deleteNotice.setOnClickListener(this);
 
 
 
@@ -51,9 +52,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (view.getId() == R.id.addEbook) {
             intent = new Intent(MainActivity.this, UploadPdfActivity.class);
             startActivity(intent);
-//        } else if(view.getId() == R.id.deleteNotice) {
-//            intent = new Intent(MainActivity.this, DeleteNoticeActivity.class);
-//            startActivity(intent);
+        } else if(view.getId() == R.id.deleteNotice) {
+            intent = new Intent(MainActivity.this, DeleteNoticeActivity.class);
+            startActivity(intent);
         } else if(view.getId() == R.id.faculty) {
             intent = new Intent(MainActivity.this, UpdateFaculty.class);
             startActivity(intent);

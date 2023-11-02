@@ -36,7 +36,8 @@ public class DeleteNoticeActivity extends AppCompatActivity {
         deleteNoticeRecyclerView = findViewById(R.id.deleteNoticeRecyclerView);
         progressBar = findViewById(R.id.progressBar);
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Notice");
+        reference = FirebaseDatabase.getInstance("https://my-college-app-060102-default-rtdb.asia-southeast1.firebasedatabase.app/")
+                .getReference().child("Notice");
 
         deleteNoticeRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         deleteNoticeRecyclerView.setHasFixedSize(true);
