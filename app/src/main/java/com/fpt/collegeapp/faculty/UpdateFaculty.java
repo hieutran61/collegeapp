@@ -82,7 +82,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     csDepartment.setHasFixedSize(true);
                     csDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list1, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list1, UpdateFaculty.this, "Computer Science");
                     csDepartment.setAdapter(adapter);
                 }
             }
@@ -112,7 +112,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     mechanicalDepartment.setHasFixedSize(true);
                     mechanicalDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list2, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list2, UpdateFaculty.this, "Mechanical");
                     mechanicalDepartment.setAdapter(adapter);
                 }
             }
@@ -142,7 +142,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     physicsDepartment.setHasFixedSize(true);
                     physicsDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list3, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list3, UpdateFaculty.this, "Physics");
                     physicsDepartment.setAdapter(adapter);
                 }
             }
@@ -172,7 +172,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     chemistryDepartment.setHasFixedSize(true);
                     chemistryDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list4, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list4, UpdateFaculty.this, "Chemistry");
                     chemistryDepartment.setAdapter(adapter);
                 }
             }
