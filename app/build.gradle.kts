@@ -44,5 +44,8 @@ dependencies {
     implementation ("androidx.navigation:navigation-ui:2.7.5")
     implementation ("com.github.smarteist:autoimageslider:1.2.0")
     implementation ("com.github.bumptech.glide:glide:4.10.0")
+    implementation ("com.github.chrisbanes:PhotoView:2.3.0")
+
 //    implementation("com.github.barteksc:android-pdf-viewer:2.8.2")
+
 }

@@ -1,6 +1,7 @@
 package com.fpt.collegeapp.ui.gallery;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.fpt.collegeapp.FullImageView;
 import com.fpt.collegeapp.R;
 
 import java.util.List;
@@ -34,6 +36,14 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.GalleryV
     @Override
     public void onBindViewHolder(@NonNull GalleryViewAdapter holder, int position) {
         Glide.with(context).load(images.get(position)).into(holder.imageView);
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, FullImageView.class);
+                intent.putExtra("image", images.get(position));
+                context.startActivity(intent);
+            }
+        });
 
     }
 
