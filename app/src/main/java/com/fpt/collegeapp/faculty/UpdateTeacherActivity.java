@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.fpt.collegeapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -71,7 +72,10 @@ public class UpdateTeacherActivity extends AppCompatActivity {
         storageReference = FirebaseStorage.getInstance().getReference();
 
         try {
-            Picasso.get().load(image).into(updateTeacherImage);
+
+            Glide.with(this) // Use the context (this) from your activity or fragment
+                    .load(image)
+                    .into(updateTeacherImage);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
