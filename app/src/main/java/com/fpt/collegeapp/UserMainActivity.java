@@ -8,10 +8,12 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.fpt.collegeapp.ui.ebook.EbookActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -68,14 +70,13 @@ public class UserMainActivity extends AppCompatActivity implements NavigationVie
             Toast.makeText(this, "navigation_rate", Toast.LENGTH_SHORT).show();
 
         } else if (item.getItemId() == R.id.navigation_ebook) {
-            Toast.makeText(this, "navigation_ebook", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, EbookActivity.class));
 
         } else if (item.getItemId() == R.id.navigation_website) {
             Toast.makeText(this, "navigation_website", Toast.LENGTH_SHORT).show();
 
         } else if (item.getItemId() == R.id.navigation_share) {
             Toast.makeText(this, "navigation_share", Toast.LENGTH_SHORT).show();
-
         }
         return true;
     }
