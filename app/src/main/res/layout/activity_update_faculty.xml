@@ -12,10 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:src="@drawable/ic_add"
+        android:layout_gravity="bottom|right"
+        android:src="@drawable/ic_add_2"
         android:elevation="3dp"
-        app:fabSize="normal"
-        android:layout_gravity="bottom|right" />
+        app:fabSize="normal"/>
 
         <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

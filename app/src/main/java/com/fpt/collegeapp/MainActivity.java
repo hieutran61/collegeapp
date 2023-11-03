@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.fpt.collegeapp.faculty.UpdateFaculty;
 import com.fpt.collegeapp.notice.UploadNotice;
 import com.fpt.collegeapp.notice.DeleteNoticeActivity;
 import com.google.firebase.database.DatabaseReference;
@@ -25,12 +26,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         uploadNotice = findViewById((R.id.addNotice));
         addGalleryImage = findViewById((R.id.uploadImage));
         addEBook = findViewById(R.id.addEbook);
+        faculty = findViewById(R.id.faculty);
+        deleteNotice = findViewById(R.id.deleteNotice);
+
 
 
         uploadNotice.setOnClickListener(this);
         addGalleryImage.setOnClickListener(this);
         addEBook.setOnClickListener(this);
+        faculty.setOnClickListener(this);
         deleteNotice.setOnClickListener(this);
+
 
 
     }
@@ -49,6 +55,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if(view.getId() == R.id.deleteNotice) {
             intent = new Intent(MainActivity.this, DeleteNoticeActivity.class);
+            startActivity(intent);
+        } else if(view.getId() == R.id.faculty) {
+            intent = new Intent(MainActivity.this, UpdateFaculty.class);
             startActivity(intent);
         }
     }

@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 
 import java.util.ArrayList;
@@ -48,61 +49,55 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeView
 
         holder.deleteNoticeTitle.setText(currentItem.getTitle());
 
-//        try {
-//            if (currentItem.getImage()!=null)
-//            Picasso.get().load(currentItem.getImage()).into(holder.deleteNoticeImage);
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
+        try {
+            if (currentItem.getImage() != null)
+                Picasso.get().load(currentItem.getImage()).into(holder.deleteNoticeImage);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         holder.deleteNotice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setMessage("Are you sure want to delete this notice ?");
+                builder.setMessage("Are you sure want to delete this notice?");
                 builder.setCancelable(true);
-                builder.setPositiveButton(
-                        "OK",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Notice");
-                                reference.child(currentItem.getKey()).removeValue()
-                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-                                                Toast.makeText(context,"Deleted", Toast.LENGTH_SHORT).show();
-                                            }
-                                        }).addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(context,"Something went wrong", Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
-                                notifyItemRemoved(position);
-                            }
-                        }
-                );
-                builder.setNegativeButton(
-                        "Cancel",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        }
-                );
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DatabaseReference reference = FirebaseDatabase.getInstance("https://my-college-app-060102-default-rtdb.asia-southeast1.firebasedatabase.app/")
+                                .getReference().child("Notice");
+                        reference.child(currentItem.getKey()).removeValue()
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                        notifyItemRemoved(position);
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
                 AlertDialog dialog = null;
                 try {
                     dialog = builder.create();
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
-
-                if (dialog!=null)
-                dialog.show();
-
+                if (dialog != null)
+                    dialog.show();
             }
         });
     }
@@ -123,8 +118,6 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeView
             deleteNotice = itemView.findViewById(R.id.deleteNotice);
             deleteNoticeTitle = itemView.findViewById(R.id.deleteNoticeTitle);
             deleteNoticeImage = itemView.findViewById(R.id.deleteNoticeImage);
-
-
         }
     }
 }
