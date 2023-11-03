@@ -42,8 +42,9 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
-                getUser();
+//                getUser();
 
             }
         });
@@ -70,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(intent);
                     } else Toast.makeText(LoginActivity.this, "Wrong username or password", Toast.LENGTH_SHORT).show();
                 }
+                else Toast.makeText(LoginActivity.this, "User not found", Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

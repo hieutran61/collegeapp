@@ -13,9 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.fpt.collegeapp.R;
-import com.squareup.picasso.Picasso;
-
 import java.util.List;
 
 public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.TeacherViewAdapter> {
@@ -45,10 +44,13 @@ public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.TeacherV
         holder.email.setText(item.getEmail());
         holder.post.setText(item.getPost());
         try {
-            Picasso.get().load(item.getImage()).into(holder.imageView);
+            Glide.with(holder.itemView.getContext())  // Use the context from the item view
+                    .load(item.getImage())  // Replace with the actual image URL or resource
+                    .into(holder.imageView);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
 
         holder.update.setOnClickListener(new View.OnClickListener() {
             @Override

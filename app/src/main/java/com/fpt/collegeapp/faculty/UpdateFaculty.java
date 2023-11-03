@@ -40,19 +40,19 @@ public class UpdateFaculty extends AppCompatActivity {
         csDepartment = findViewById(R.id.csDepartment);
         mechanicalDepartment = findViewById(R.id.mechanicaalDepartment);
         physicsDepartment = findViewById(R.id.physicsDepartment);
-//        chemistryDepartment = findViewById(R.id.chemistryDepartment);
+        chemistryDepartment = findViewById(R.id.chemistryDepartment);
 
         csNoData = findViewById(R.id.csNoData);
         mechNoData = findViewById(R.id.mechNoData);
         physicsNoData = findViewById(R.id.physicsNoData);
-//        chemistryNoData = findViewById(R.id.chemistryNoData);
+        chemistryNoData = findViewById(R.id.chemistryNoData);
 
         reference = FirebaseDatabase.getInstance("https://my-college-app-060102-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("teacher");
 
         csDepartment();
         mechanicalDepartment();
         physicsDepartment();
-//        chemistryDepartment();
+        chemistryDepartment();
 
         fab = findViewById(R.id.fab);
 
