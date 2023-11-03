@@ -36,7 +36,7 @@ public class GalleryFragment extends Fragment {
         otherRecycler = view.findViewById(R.id.otherRecycler);
 
 
-        reference = FirebaseDatabase.getInstance().getReference().child("gallery");
+        reference = FirebaseDatabase.getInstance("https://my-college-app-060102-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("gallery");
 
         getConvoImage();
 
@@ -68,7 +68,7 @@ public class GalleryFragment extends Fragment {
     }
 
     private void getConvoImage() {
-        reference.child("Convocation Events").addValueEventListener(new ValueEventListener() {
+        reference.child("Convocation").addValueEventListener(new ValueEventListener() {
 
             List<String> imageList = new ArrayList<>();
             @Override
