@@ -37,14 +37,14 @@ public class UserNoticeAdapter extends RecyclerView.Adapter<UserNoticeAdapter.No
     @NonNull
     @Override
     public NoticeViewAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.newsfeed_item_layout, parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.user_newsfeed_item_layout, parent,false);
         return new NoticeViewAdapter(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull NoticeViewAdapter holder, int position) {
 
-        NoticeData currentItem = list.get(position);
+        final NoticeData currentItem = list.get(position);
 
         holder.deleteNoticeTitle.setText(currentItem.getTitle());
         holder.date.setText(currentItem.getData());
