@@ -46,6 +46,6 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.10.0")
     implementation ("com.github.chrisbanes:PhotoView:2.3.0")
 
-//    implementation("com.github.barteksc:android-pdf-viewer:2.8.2")
+    implementation("com.github.barteksc:android-pdf-viewer:2.8.2")
 
 }

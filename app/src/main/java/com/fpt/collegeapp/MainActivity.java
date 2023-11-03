@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent = new Intent(MainActivity.this, UploadImage.class);
             startActivity(intent);
         } else if (view.getId() == R.id.addEbook) {
+            System.out.println("START EBOOK");
             intent = new Intent(MainActivity.this, UploadPdfActivity.class);
             startActivity(intent);
         } else if(view.getId() == R.id.deleteNotice) {
