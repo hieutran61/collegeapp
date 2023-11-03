@@ -40,9 +40,9 @@ dependencies {
     implementation("com.google.firebase:firebase-database:20.3.0")
     implementation("com.google.firebase:firebase-storage:20.3.0")
     implementation ("de.hdodenhof:circleimageview:3.0.1")
-    implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("androidx.navigation:navigation-fragment:2.7.5")
     implementation ("androidx.navigation:navigation-ui:2.7.5")
     implementation ("com.github.smarteist:autoimageslider:1.2.0")
     implementation ("com.github.bumptech.glide:glide:4.10.0")
+//    implementation("com.github.barteksc:android-pdf-viewer:2.8.2")
 }
