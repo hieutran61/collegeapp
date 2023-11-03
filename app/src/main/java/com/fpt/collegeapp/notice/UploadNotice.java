@@ -8,6 +8,9 @@ import androidx.cardview.widget.CardView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -93,6 +96,14 @@ public class UploadNotice extends AppCompatActivity {
         byte[] finalImg = baos.toByteArray();
         final StorageReference filePath;
         filePath = storageReference.child("Notice").child(finalImg + "jpg");
+        bitmap = BitmapFactory.decodeFile(filePath+"jpg");
+        int targetWidth = 250;
+        int targetHeight = 250;
+        Bitmap resizedBitmap = Bitmap.createBitmap(targetWidth, targetHeight, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(resizedBitmap);
+        Rect rect = new Rect(0, 0, targetWidth, targetHeight);
+        canvas.drawBitmap(bitmap, null, rect, null);
+
         final UploadTask uploadTask = filePath.putBytes(finalImg);
         uploadTask.addOnCompleteListener(UploadNotice.this, new OnCompleteListener<UploadTask.TaskSnapshot>() {
             @Override
