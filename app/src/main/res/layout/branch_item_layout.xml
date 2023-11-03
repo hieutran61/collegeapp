@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="center"
+            android:orientation="horizontal">
+            
+            <ImageView
+                android:id="@+id/br_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_computer"/>
+
+
+            <TextView
+                android:id="@+id/br_title"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:text="Branch"
+                android:textSize="22sp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/textColor"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/br_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Re-sync Gradle: After removing the old Android Support Library dependency, sync your project with Gradle to ensure that the changes are applied.
+
+Check Transitive Dependencies: Sometimes, transitive dependencies can bring in older support libraries. Use the ./gradlew app:dependencies command in the terminal to view a list of your project's dependencies and check for any compatibility issues. If you see any dependencies that use the old support libraries, try to update or exclude them."
+            android:layout_marginTop="36dp"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/textColor"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
