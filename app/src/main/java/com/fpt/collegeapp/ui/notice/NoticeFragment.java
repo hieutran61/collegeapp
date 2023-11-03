@@ -17,6 +17,7 @@ import com.fpt.collegeapp.R;
 import com.fpt.collegeapp.notice.DeleteNoticeActivity;
 import com.fpt.collegeapp.notice.NoticeAdapter;
 import com.fpt.collegeapp.notice.NoticeData;
+import com.fpt.collegeapp.notice.UserNoticeAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +32,7 @@ public class NoticeFragment extends Fragment {
     private ProgressBar progressBar;
 
     private ArrayList<NoticeData> list;
-    private NoticeAdapter adapter;
+    private UserNoticeAdapter adapter;
 
     private DatabaseReference reference;
 
@@ -67,7 +68,7 @@ public class NoticeFragment extends Fragment {
                     list.add(data);
                 }
 
-                adapter = new NoticeAdapter(getContext(), list);
+                adapter = new UserNoticeAdapter(getContext(), list);
                 adapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
                 deleteNoticeRecyclerView.setAdapter(adapter);
