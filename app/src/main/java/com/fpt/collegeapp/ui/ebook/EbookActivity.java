@@ -28,6 +28,8 @@ public class EbookActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ebook);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().getTitle("Ebooks");
 
         ebookRecycler = findViewById(R.id.ebookRecycler);
 

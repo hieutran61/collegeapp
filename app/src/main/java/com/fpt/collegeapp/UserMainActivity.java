@@ -3,6 +3,7 @@ package com.fpt.collegeapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -79,5 +80,14 @@ public class UserMainActivity extends AppCompatActivity implements NavigationVie
             Toast.makeText(this, "navigation_share", Toast.LENGTH_SHORT).show();
         }
         return true;
+    }
+
+    public ActionBarDrawerToggle getToggle() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }else {
+            super.onBackPressed();
+        }
+        return toggle;
     }
 }
