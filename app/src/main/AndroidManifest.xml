@@ -19,6 +19,9 @@
             android:name=".FullImageView"
             android:exported="false" />
         <activity
+            android:name=".ui.ebook.PdfViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.ebook.EbookActivity"
             android:exported="false" />
         <activity

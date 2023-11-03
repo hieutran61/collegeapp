@@ -15,13 +15,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.fpt.collegeapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
 
 
 import java.util.ArrayList;
@@ -52,7 +52,9 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeView
 
         try {
             if (currentItem.getImage() != null)
-                Picasso.get().load(currentItem.getImage()).into(holder.deleteNoticeImage);
+                Glide.with(context) // Use 'context' as the first parameter
+                        .load(currentItem.getImage()) // Load the image URL or resource
+                        .into(holder.deleteNoticeImage);
         }catch (Exception e){
             e.printStackTrace();
         }
