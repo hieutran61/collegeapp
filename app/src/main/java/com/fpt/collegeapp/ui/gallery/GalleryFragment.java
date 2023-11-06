@@ -70,7 +70,7 @@ public class GalleryFragment extends Fragment {
     private void getConvoImage() {
         reference.child("Convocation").addValueEventListener(new ValueEventListener() {
 
-            List<String> imageList = new ArrayList<>();
+            List<String> imageList  = new ArrayList<>();
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot: dataSnapshot.getChildren()){
