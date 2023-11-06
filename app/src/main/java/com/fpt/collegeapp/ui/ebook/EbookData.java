@@ -1,22 +1,22 @@
 package com.fpt.collegeapp.ui.ebook;
 
 public class EbookData {
-    private String name, pdfUrl;
+    private String pdfTitle, pdfUrl;
 
     public EbookData() {
     }
 
-    public EbookData(String name, String pdfUrl) {
-        this.name = name;
+    public EbookData(String pdfTitle, String pdfUrl) {
+        this.pdfTitle = pdfTitle;
         this.pdfUrl = pdfUrl;
     }
 
-    public String getName() {
-        return name;
+    public String getPdfTitle() {
+        return pdfTitle;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPdfTitle(String pdfTitle) {
+        this.pdfTitle = pdfTitle;
     }
 
     public String getPdfUrl() {
@@ -25,5 +25,13 @@ public class EbookData {
 
     public void setPdfUrl(String pdfUrl) {
         this.pdfUrl = pdfUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "EbookData{" +
+                "pdfTitle='" + pdfTitle + '\'' +
+                ", pdfUrl='" + pdfUrl + '\'' +
+                '}';
     }
 }

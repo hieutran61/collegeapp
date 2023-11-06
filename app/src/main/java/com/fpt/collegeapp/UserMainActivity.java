@@ -37,17 +37,17 @@ public class UserMainActivity extends AppCompatActivity implements NavigationVie
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         navController = Navigation.findNavController(this, R.id.frame_layout);
 
-//        drawerLayout = findViewById(R.id.drawerLayout);
-//        navigationView = findViewById(R.id.navigation_view);
-//
-//        toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.start, R.string.close);
-//
-//        drawerLayout.addDrawerListener(toggle);
-//        toggle.syncState();
-//
-//        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-//
-//        navigationView.setNavigationItemSelectedListener(this);
+        drawerLayout = findViewById(R.id.drawerLayout);
+        navigationView = findViewById(R.id.navigation_view);
+
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.start, R.string.close);
+
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+
+        navigationView.setNavigationItemSelectedListener(this);
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }

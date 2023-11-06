@@ -29,11 +29,12 @@ public class EbookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ebook);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().getTitle("Ebooks");
+//        getSupportActionBar().getTitle("Ebooks");
 
         ebookRecycler = findViewById(R.id.ebookRecycler);
 
-        reference = FirebaseDatabase.getInstance().getReference().child("pdf");
+        reference = FirebaseDatabase.getInstance("https://my-college-app-060102-default-rtdb.asia-southeast1.firebasedatabase.app/")
+                    .getReference().child("pdf");
 
         getData();
     }
