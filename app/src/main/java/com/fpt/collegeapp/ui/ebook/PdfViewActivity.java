@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.fpt.collegeapp.R;
+import com.github.barteksc.pdfviewer.PDFView;
 //import com.github.barteksc.pdfviewer.PDFView;
 
 import java.io.BufferedInputStream;
@@ -18,14 +19,16 @@ import java.util.stream.Stream;
 
 public class PdfViewActivity extends AppCompatActivity {
     private String  url;
-//    private PDFView pdfView;
+    private PDFView pdfView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf_view);
+
+
         url = getIntent().getStringExtra("pdfUrl");
-//        pdfView = findViewById(R.id.pdfView);
+        pdfView = findViewById(R.id.pdfView);
 
         new PdfDownload().execute(url);
     }
@@ -54,7 +57,7 @@ public class PdfViewActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(InputStream inputStream) {
-//            pdfView.fromStream(inputStream).load();
+            pdfView.fromStream(inputStream).load();
         }
     }
 }
